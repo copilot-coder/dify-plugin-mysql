@@ -1,0 +1,26 @@
+identity:
+  name: execute_sql
+  author: testuser
+  label: # 在 Dify UI 中显示的工具名称 (多语言)
+    en_US: execute sql
+    zh_Hans: 执行sql语句
+description:
+  human: # 给人类用户看的工具描述 (多语言)
+    en_US: execute sql
+    zh_Hans: 执行sql语句
+  llm: execute sql # 给 LLM 看的工具描述 (用于 Agent 模式) 
+parameters: # 定义工具的输入参数列表
+  - name: sql
+    type: string
+    required: true
+    label:  # 在 Dify UI 中显示的参数标签 (多语言)
+      en_US: sql
+      zh_Hans: sql语句
+    human_description: # 给人类用户看的参数描述 (多语言)
+      en_US: the sql to execute
+      zh_Hans: 要执行的sql语句
+    llm_description: sql # 给 LLM 看的参数描述 (指导 Agent 如何填充)
+    form: llm # 参数表单类型 ('llm' 或 'form')
+extra:
+  python:
+    source: tools/execute_sql.py

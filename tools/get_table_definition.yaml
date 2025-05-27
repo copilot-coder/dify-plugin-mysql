@@ -1,0 +1,26 @@
+identity:
+  name: get_table_definition
+  author: testuser
+  label: # 在 Dify UI 中显示的工具名称 (多语言)
+    en_US: get database table definition
+    zh_Hans: 获取数据库表定义
+description:
+  human: # 给人类用户看的工具描述 (多语言)
+    en_US: get database table definition
+    zh_Hans: 获取数据库表定义
+  llm: get database table definition # 给 LLM 看的工具描述 (用于 Agent 模式) 
+parameters: # 定义工具的输入参数列表
+  - name: table
+    type: string
+    required: true
+    label:  # 在 Dify UI 中显示的参数标签 (多语言)
+      en_US: database table name
+      zh_Hans: 数据库表名
+    human_description: # 给人类用户看的参数描述 (多语言)
+      en_US: database table name
+      zh_Hans: 数据库表名
+    llm_description: database table name # 给 LLM 看的参数描述 (指导 Agent 如何填充)
+    form: llm # 参数表单类型 ('llm' 或 'form')
+extra:
+  python:
+    source: tools/get_table_definition.py

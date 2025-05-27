@@ -1,0 +1,49 @@
+identity:
+  author: testuser
+  name: mysql
+  label:
+    en_US: mysql
+    zh_Hans: mysql
+  description:
+    en_US: mysql tools
+    zh_Hans: mysql tools
+  icon: icon.svg
+tools: # 插件包含的工具列表
+  - tools/get_table_definition.yaml
+  - tools/execute_sql.yaml
+
+extra:
+  python:
+    source: provider/mysql.py
+
+credentials_for_provider:
+  host: # 数据库HOST
+    type: text-input # 输入类型为普通文本
+    required: true # 此凭证是必需的
+    label: # 在 Dify UI 中显示的标签 (支持多语言)
+        en_US: MySQL Server Host
+        zh_Hans: MySQL Server主机
+  port: # 数据库端口
+    type: text-input # 输入类型为普通文本
+    required: true # 此凭证是必需的
+    label: # 在 Dify UI 中显示的标签 (支持多语言)
+        en_US: MySQL Server Port
+        zh_Hans: MySQL Server端口
+  user: # 数据库用户名
+    type: text-input # 输入类型为普通文本
+    required: true # 此凭证是必需的
+    label: # 在 Dify UI 中显示的标签 (支持多语言)
+        en_US: user name
+        zh_Hans: 用户名
+  password: # 数据库密码
+    type: secret-input # 输入类型为密码框
+    required: true # 此凭证是必需的
+    label: # 在 Dify UI 中显示的标签 (支持多语言)
+        en_US: password
+        zh_Hans: 密码
+  database: # 数据库名
+    type: text-input # 输入类型为普通文本
+    required: true # 此凭证是必需的
+    label: # 在 Dify UI 中显示的标签 (支持多语言)
+        en_US: database name
+        zh_Hans: 数据库名
